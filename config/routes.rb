@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+  get 'songs', to: 'song#index', as: 'songs'
+  get 'songs/new', to: 'song#new', as: 'new_song'
+  get 'songs/:id/edit', to: 'song#edit', as: 'edit_song'
+  get 'songs/:id', to: 'song#show', as: 'song'
+
+  post 'songs', to: 'song#create'
+  patch 'songs/:id', to: 'song#update'
+  delete 'songs/:id', to: 'song#delete'
+
   get 'genres', to: 'genre#index', as: 'genres' # find out later why leaving this out leads to the error of a frozen array
   get 'genres/new', to: 'genre#new', as: 'new_genre'
   get 'genres/:id/edit', to: 'genre#edit', as: 'edit_genre'
