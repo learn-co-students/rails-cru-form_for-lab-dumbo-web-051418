@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  get 'artists/', to: 'artist#index'
+  get 'genres', to: 'genre#index', as: 'genres' # find out later why leaving this out leads to the error of a frozen array
+  get 'genres/new', to: 'genre#new', as: 'new_genre'
+  get 'genres/:id/edit', to: 'genre#edit', as: 'edit_genre'
+  get 'genres/:id', to: 'genre#show', as: 'genre'
+
+  post 'genres', to: 'genre#create'
+  patch 'genres/:id', to: 'genre#update'
+  delete 'genres/:id', to: 'genre#delete'
+
+  get 'artists', to: 'artist#index'
   get 'artists/new', to: 'artist#new', as: 'new_artist'
   get 'artists/:id/edit', to: 'artist#edit', as: 'edit_artist'
   get 'artists/:id', to: 'artist#show', as: 'artist'
