@@ -1,0 +1,9 @@
+<h1><%= @artist.name %></h1>
+<div>
+  <p>
+  <%= @artist.bio %>
+</p>
+</div>
+
+<p><%= link_to "Edit This Artist", edit_artist_path(@artist)%></p>
+<p><%= link_to "Return Main Page", artists_path%></p>
